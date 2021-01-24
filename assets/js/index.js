@@ -15,8 +15,9 @@ $('#btnLogout').on('click', function() {
   })
 })
 
-
-$.get('/my/userinfo', function(res) {
+getUserInfo()
+function getUserInfo(){
+  $.get('/my/userinfo', function(res) {
   // 获取用户信息失败
   if (res.status !== 0) {
     return layer.msg('获取用户信息失败！')
@@ -24,7 +25,7 @@ $.get('/my/userinfo', function(res) {
   // 获取用户信息成功
   renderAvatar(res.data)
 })
-
+}
 //渲染用户的头像
 function renderAvatar(user) {
   // 1. 获取用户的名称
