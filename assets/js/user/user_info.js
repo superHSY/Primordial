@@ -17,7 +17,6 @@ $(function(){
                 if( res.status !== 0){
                 return layer.msg('获取用户失败')
                 }
-                console.log(res)
                 form.val('formUserInfo',res.data)
             }
         })
